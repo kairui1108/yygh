@@ -12,6 +12,10 @@
     <artifactId>services</artifactId>
     <modules>
         <module>service_user</module>
+        <module>service_hosp</module>
+        <module>service_cmn</module>
+        <module>service_sms</module>
+        <module>service_oss</module>
     </modules>
 
     <properties>
@@ -22,16 +26,16 @@
 
     <version>1.0</version>
     <dependencies>
-        <!--<dependency>-->
-        <!--    <groupId>com.atguigu.yygh</groupId>-->
-        <!--    <artifactId>service-util</artifactId>-->
-        <!--    <version>1.0</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--    <groupId>com.atguigu.yygh</groupId>-->
-        <!--    <artifactId>model</artifactId>-->
-        <!--    <version>1.0</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>service_utils</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>model</artifactId>
+            <version>1.0</version>
+        </dependency>
         <!--web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -63,10 +67,16 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!-- 流量控制 -->
+        <!--&lt;!&ndash; 流量控制 &ndash;&gt;-->
+        <!--<dependency>-->
+        <!--    <groupId>com.alibaba.cloud</groupId>-->
+        <!--    <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
+        <!--</dependency>-->
+        <!--hutool-->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.17</version>
         </dependency>
     </dependencies>
     <build>

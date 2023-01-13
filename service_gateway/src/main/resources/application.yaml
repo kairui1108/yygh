@@ -1,0 +1,35 @@
+server:
+  port: 80
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+#      discovery:
+#        cluster-name: MM
+    gateway:
+      routes:
+        - id: service-hosp
+          uri: lb://service-hosp
+          predicates:
+            - Path=/*/hosp/**
+        - id: service-cmn
+          uri: lb://service-cmn
+          predicates:
+            - Path=/*/cmn/**
+        - id: service-user
+          uri: lb://service-user
+          predicates:
+            - Path=/*/user/**,/*/ucenter/**
+        - id: service-sms
+          uri: lb://service-sms
+          predicates:
+            - Path=/*/sms/**
+        - id: service-oss
+          uri: lb://service-oss
+          predicates:
+            - Path=/*/oss/**
+      default-filters:
+        - AddRequestHeader=origin, gateway
+
